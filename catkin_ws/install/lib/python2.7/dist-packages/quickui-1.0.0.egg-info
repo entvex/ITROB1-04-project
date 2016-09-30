@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: quickui
+Version: 1.0.0
+Summary: The quickui package provides an python embedded DSL for
+  building quick ROS gui. quickui is intended only for creating test GUIs for various nodes or 
+  prototyping systems.
+Home-page: UNKNOWN
+Author: Morten Larsen
+Author-email: mortenlarsens@gmail.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

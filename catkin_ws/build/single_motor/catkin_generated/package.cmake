@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "single_motor")
+set(single_motor_MAINTAINER "ubuntu <ubuntu@todo.todo>")
+set(single_motor_DEPRECATED "")
+set(single_motor_VERSION "0.0.0")
+set(single_motor_BUILD_DEPENDS "dynamixel_msgs" "rospy" "std_msgs")
+set(single_motor_RUN_DEPENDS "dynamixel_msgs" "rospy" "std_msgs")
+set(single_motor_BUILDTOOL_DEPENDS "catkin")

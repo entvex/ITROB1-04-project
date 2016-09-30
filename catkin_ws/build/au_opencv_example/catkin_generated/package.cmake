@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "au_opencv_example")
+set(au_opencv_example_MAINTAINER "ros <ros@todo.todo>")
+set(au_opencv_example_DEPRECATED "")
+set(au_opencv_example_VERSION "0.0.0")
+set(au_opencv_example_BUILD_DEPENDS "rospy")
+set(au_opencv_example_RUN_DEPENDS "rospy")
+set(au_opencv_example_BUILDTOOL_DEPENDS "catkin")

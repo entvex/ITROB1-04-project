@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "quickui")
+set(quickui_MAINTAINER "Morten Larsen <mortenlarsens@gmail.com>")
+set(quickui_DEPRECATED "")
+set(quickui_VERSION "1.0.0")
+set(quickui_BUILD_DEPENDS "rospy" "rqt_gui" "rqt_gui_py")
+set(quickui_RUN_DEPENDS "rospy" "rqt_gui" "rqt_gui_py")
+set(quickui_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "au_crustcrawler_base")
+set(au_crustcrawler_base_MAINTAINER "ros <ros@todo.todo>")
+set(au_crustcrawler_base_DEPRECATED "")
+set(au_crustcrawler_base_VERSION "0.0.0")
+set(au_crustcrawler_base_BUILD_DEPENDS )
+set(au_crustcrawler_base_RUN_DEPENDS "rospy" "actionlib" "control_msgs" "trajectory_msgs")
+set(au_crustcrawler_base_BUILDTOOL_DEPENDS "catkin")
