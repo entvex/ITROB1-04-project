@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "au_crustcrawler_base"
-PROJECT_SPACE_DIR = "/home/ubuntu/catkin_ws/devel"
+PROJECT_SPACE_DIR = "/home/ubuntu/ITROB1-04-project/catkin_ws/devel"
 PROJECT_VERSION = "0.0.0"

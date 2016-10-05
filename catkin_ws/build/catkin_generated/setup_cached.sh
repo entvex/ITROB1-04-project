@@ -7,4 +7,12 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/ubuntu/catkin_ws/build"
+export CMAKE_PREFIX_PATH="/home/ubuntu/ITROB1-04-project/catkin_ws/devel:$CMAKE_PREFIX_PATH"
+export CPATH="/home/ubuntu/ITROB1-04-project/catkin_ws/devel/include:$CPATH"
+export LD_LIBRARY_PATH="/home/ubuntu/ITROB1-04-project/catkin_ws/devel/lib:$LD_LIBRARY_PATH"
+export PATH="/home/ubuntu/ITROB1-04-project/catkin_ws/devel/bin:$PATH"
+export PKG_CONFIG_PATH="/home/ubuntu/ITROB1-04-project/catkin_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PWD="/home/ubuntu/ITROB1-04-project/catkin_ws/build"
+export PYTHONPATH="/home/ubuntu/ITROB1-04-project/catkin_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/ubuntu/ITROB1-04-project/catkin_ws/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/ubuntu/catkin_ws/src:/home/ubuntu/ITROB1-04-project/catkin_ws/src:$ROS_PACKAGE_PATH"

@@ -1,8 +1,8 @@
-prefix=/home/ubuntu/catkin_ws/install
+prefix=/home/ubuntu/ITROB1-04-project/catkin_ws/install
 
 Name: au_crustcrawler_base
 Description: Description of au_crustcrawler_base
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/ubuntu/catkin_ws/install/lib 
+Libs: -L/home/ubuntu/ITROB1-04-project/catkin_ws/install/lib 
 Requires: 
