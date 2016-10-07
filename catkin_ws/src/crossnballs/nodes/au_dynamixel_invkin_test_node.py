@@ -21,10 +21,10 @@ def invkin(xyz):
 	The robot model shown in rviz can be adjusted accordingly by editing au_crustcrawler_ax12.urdf
 	"""
 
-	d1 = 0.168 # m (height of 2nd joint)
+	d1 = 0.166 # m (height of 2nd joint)
 	a1 = 0 # (distance along "y-axis" to 2nd joint)
 	a2 = 0.173 # (distance between 2nd and 3rd joints)
-	d4 = 0.062+0.177 # (distance from 3rd joint to gripper center - all inclusive, ie. also 4th joint)
+	d4 = 0.065+0.165 # (distance from 3rd joint to gripper center - all inclusive, ie. also 4th joint)
 
 	x = xyz[0]
 	y = xyz[1]
@@ -89,7 +89,6 @@ class ActionExampleNode:
 
 if __name__ == "__main__":
 	rospy.init_node("au_dynamixel_test_node")
-
 	node= ActionExampleNode("/arm_controller/follow_joint_trajectory")
 
 	node.send_command()
