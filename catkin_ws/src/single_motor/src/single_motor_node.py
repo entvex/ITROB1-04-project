@@ -5,7 +5,7 @@ from std_msgs.msg    import Float64
 
 class single_motor_node:
     def __init__(self):
-        self.joint_cmd_pub = rospy.Publisher("/joint1/command", Float64)
+        self.joint_cmd_pub = rospy.Publisher("/gripper/command", Float64)
         #self.sub = rospy.Subscriber()
         self.toggle = False
         self.timer = rospy.Timer(rospy.Duration(.5), self.on_timer)

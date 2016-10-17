@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="32" version="2.0">
+<workbench progressCount="45" version="2.0">
 <workbenchAdvisor/>
-<window height="1313" width="1898" x="847" y="102">
+<window height="1313" maximized="true" width="1898" x="65" y="24">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -35,13 +35,14 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.python.pydev.editor.PythonEditor" name="moveit_example.py" partName="moveit_example" path="/home/ubuntu/catkin_ws/src/au_crustcrawler_moveit/scripts/moveit_example.py" title="moveit_example" tooltip="build/[Source directory]/au_crustcrawler_moveit/scripts/moveit_example.py" workbook="org.eclipse.ui.internal.EditorStack@24bceb9b">
+<editor id="org.python.pydev.editor.PythonEditor" name="moveit_example.py" partName="moveit_example" path="/home/ubuntu/catkin_ws/src/au_crustcrawler_moveit/scripts/moveit_example.py" title="moveit_example" tooltip="build/[Source directory]/au_crustcrawler_moveit/scripts/moveit_example.py" workbook="org.eclipse.ui.internal.EditorStack@24bceb9b">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/build/[Source directory]/au_crustcrawler_moveit/scripts/moveit_example.py"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5843" selectionTopPixel="2518"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4752" selectionTopPixel="2127"/>
 </editor>
 <editor id="org.eclipse.ui.DefaultTextEditor" name="base.launch" partName="base.launch" path="/home/ubuntu/catkin_ws/src/au_crustcrawler_base/launch/base/base.launch" title="base.launch" tooltip="build/[Source directory]/au_crustcrawler_base/launch/base/base.launch" workbook="org.eclipse.ui.internal.EditorStack@24bceb9b">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/build/[Source directory]/au_crustcrawler_base/launch/base/base.launch"/>
@@ -51,8 +52,15 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/build/[Source directory]/au_crustcrawler_base/conf/au_crustcrawler_ax12.urdf"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2054" selectionTopPixel="1017"/>
 </editor>
+<editor activePart="true" focus="true" id="org.python.pydev.editor.PythonEditor" name="armControllerNode.py" partName="armControllerNode" title="armControllerNode" tooltip="/home/ubuntu/ITROB1-04-project/catkin_ws/src/crossnballs/nodes/armControllerNode.py" workbook="org.eclipse.ui.internal.EditorStack@24bceb9b">
+<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/home/ubuntu/ITROB1-04-project/catkin_ws/src/crossnballs/nodes/armControllerNode.py"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4451" selectionTopPixel="1952"/>
+</editor>
 </editors>
 <views>
+<view id="org.eclipse.ui.views.ProgressView" partName="Progress">
+<viewState/>
+</view>
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
 <viewState/>
 </view>
@@ -74,8 +82,7 @@
 <view id="org.eclipse.cdt.make.ui.views.MakeView" partName="Make Target"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings (1 item)"/>
+<expanded>&#x0A;<category IMemento.internal.id="Warnings (1 item)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="105" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -91,16 +98,12 @@
 <view id="org.eclipse.mylyn.tasks.ui.views.tasks" partName="Task List"/>
 <view id="org.python.pydev.navigator.view" partName="PyDev Package Explorer">
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0">
-<expanded IMemento.internal.id="/home/ubuntu/catkin_ws/build"/>
-<expanded IMemento.internal.id="/home/ubuntu/catkin_ws/src"/>
-<expanded IMemento.internal.id="/home/ubuntu/catkin_ws/src/au_crustcrawler_base"/>
-<expanded IMemento.internal.id="/home/ubuntu/catkin_ws/src/au_crustcrawler_base/conf"/>
-<expanded IMemento.internal.id="/home/ubuntu/catkin_ws/src/au_crustcrawler_base/launch"/>
-<expanded IMemento.internal.id="/home/ubuntu/catkin_ws/src/au_crustcrawler_base/launch/base"/>
-<expanded IMemento.internal.id="/home/ubuntu/catkin_ws/src/au_crustcrawler_moveit"/>
-<expanded IMemento.internal.id="/home/ubuntu/catkin_ws/src/au_crustcrawler_moveit/config"/>
-<expanded IMemento.internal.id="/home/ubuntu/catkin_ws/src/au_crustcrawler_moveit/scripts"/>
-<selected IMemento.internal.id="/home/ubuntu/catkin_ws/src/au_crustcrawler_base/conf/joints.yaml"/>
+<expanded IMemento.internal.id="/home/ubuntu/ITROB1-04-project/catkin_ws/build"/>
+<expanded IMemento.internal.id="/home/ubuntu/ITROB1-04-project/catkin_ws/build/crossnballs"/>
+<expanded IMemento.internal.id="/home/ubuntu/ITROB1-04-project/catkin_ws/build/crossnballs/catkin_generated"/>
+<expanded IMemento.internal.id="/home/ubuntu/ITROB1-04-project/catkin_ws/build/crossNBalls"/>
+<expanded IMemento.internal.id="/home/ubuntu/ITROB1-04-project/catkin_ws/build/crossNBalls/catkin_generated"/>
+<selected IMemento.internal.id="/home/ubuntu/ITROB1-04-project/catkin_ws/build/crossnballs"/>
 </viewState>
 </view>
 </views>
@@ -167,49 +170,36 @@
 <view id="org.eclipse.cdt.make.ui.views.MakeView"/>
 <view id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
 <fastViewBars/>
-<layout>
-<mainWindow>
-<info folder="true" part="topLeft">
-<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
-<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
 <page content="org.eclipse.cdt.ui.CView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@2e838aba" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@2e838aba" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.24950495" ratioLeft="252" ratioRight="758" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottom" ratio="0.74882996" ratioLeft="480" ratioRight="161" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<info folder="true" part="bottom" ratio="0.74882996" ratioLeft="480" ratioRight="161" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="topRight" ratio="0.74934036" ratioLeft="568" ratioRight="190" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="topRight" ratio="0.74934036" ratioLeft="568" ratioRight="190" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.cdt.make.ui.views.MakeView" label="Make Target"/>
 <page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="Task List"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 </presentation>
@@ -254,6 +244,7 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.python.pydev.navigator.view"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.ui.views.ProgressView"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -272,15 +263,16 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.25940594" ratioLeft="262" ratioRight="748" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottom" ratio="0.46069315" ratioLeft="545" ratioRight="638" relationship="4" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.2646421" ratioLeft="488" ratioRight="1356" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottom" ratio="0.5714286" ratioLeft="476" ratioRight="357" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.ui.views.ProgressView" label="Progress"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
-<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
@@ -338,35 +330,25 @@
 <view id="org.eclipse.debug.ui.BreakpointView"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <fastViewBars/>
-<layout>
-<mainWindow>
-<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
-<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="1416" ratioRight="472" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="1416" ratioRight="472" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7495784" ratioLeft="889" ratioRight="297" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7495784" ratioLeft="889" ratioRight="297" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.cdt.debug.ui.executablesView" label="Executables"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
@@ -374,26 +356,20 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.44994375" ratioLeft="400" ratioRight="489" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
-<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="1416" ratioRight="472" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="1416" ratioRight="472" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.cdt.dsf.gdb.ui.tracecontrol.view" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.dsf.debug.ui.disassembly.view" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="944" ratioRight="944" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
-<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
+<info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="944" ratioRight="944" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">&#x0A;<folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.debug.ui.SignalsView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.ModuleView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
 <part id="1"/>
 </presentation>
 </folder>
@@ -411,6 +387,7 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.python.pydev.editor.PythonEditor" path="/build/[Source directory]/au_crustcrawler_moveit/scripts/moveit_example.py"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/build/[Source directory]/au_crustcrawler_base/launch/base/base.launch"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/build/[Source directory]/au_crustcrawler_base/conf/au_crustcrawler_ax12.urdf"/>
+<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.python.pydev.editor.PythonEditor" uri="file:/home/ubuntu/ITROB1-04-project/catkin_ws/src/crossnballs/nodes/armControllerNode.py"/>
 </editors>
 <item historyLabel="single_motor_node" index="0">
 <position info="not_deleted" x="478" y="0"/>
@@ -442,8 +419,11 @@
 <item historyLabel="moveit_example" index="3">
 <position info="not_deleted" x="4922" y="0"/>
 </item>
-<item active="true" historyLabel="moveit_example" index="3">
+<item historyLabel="moveit_example" index="3">
 <position info="not_deleted" x="3858" y="188"/>
+</item>
+<item active="true" historyLabel="armControllerNode" index="6">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -463,6 +443,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.python.pydev.editor.PythonEditor" name="armControllerNode.py" tooltip="/home/ubuntu/ITROB1-04-project/catkin_ws/src/crossnballs/nodes/armControllerNode.py">
+<persistable uri="file:/home/ubuntu/ITROB1-04-project/catkin_ws/src/crossnballs/nodes/armControllerNode.py"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="joints.yaml" tooltip="build/[Source directory]/au_crustcrawler_base/conf/joints.yaml">
 <persistable path="/build/[Source directory]/au_crustcrawler_base/conf/joints.yaml"/>
 </file>

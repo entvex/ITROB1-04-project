@@ -3,6 +3,7 @@
 
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="/home/ubuntu/catkin_ws/src/rosserial/rosserial_server/include"/>
 <includePath path="/home/ubuntu/catkin_ws/devel/include"/>
 <includePath path="/opt/ros/hydro/include"/>
 <includePath path="/usr/include/c++/4.6"/>
@@ -234,5 +235,8 @@
 <definedSymbol symbol="__ELF__=1"/>
 <definedSymbol symbol="__DECIMAL_BID_FORMAT__=1"/>
 <definedSymbol symbol="_GNU_SOURCE=1"/>
+<definedSymbol symbol="ROS_BUILD_SHARED_LIBS=1"/>
+<definedSymbol symbol="ROS_PACKAGE_NAME=&quot;rosserial_server&quot;"/>
+<definedSymbol symbol="ROSCONSOLE_BACKEND_LOG4CXX=1"/>
 </collector>
 </scannerInfo>

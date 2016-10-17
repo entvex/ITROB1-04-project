@@ -2751,3 +2751,366 @@ make[2]: Leaving directory `/home/ubuntu/catkin_ws/build'
 [100%] Built target rosserial_server_socket_node
 make[1]: Leaving directory `/home/ubuntu/catkin_ws/build'
 /usr/bin/cmake -E cmake_progress_start /home/ubuntu/catkin_ws/build/CMakeFiles 0
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu/catkin_ws/src -B/home/ubuntu/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+-- Using CATKIN_DEVEL_PREFIX: /home/ubuntu/catkin_ws/devel
+-- Using CMAKE_PREFIX_PATH: /home/ubuntu/catkin_ws/devel;/opt/ros/hydro
+-- This workspace overlays: /home/ubuntu/catkin_ws/devel;/opt/ros/hydro
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Python version: 2.7
+-- Using Debian Python package layout
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/ubuntu/catkin_ws/build/test_results
+-- Found gtest sources under '/usr/src/gtest': gtests will be built
+-- catkin 0.5.90
+-- BUILD_SHARED_LIBS is on
+WARNING: Package "ompl" does not follow the version conventions. It should not contain leading zeros (unless the number is 0).
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 21 packages in topological order:
+-- ~~  - au_crustcrawler_base
+-- ~~  - dynamixel_driver
+-- ~~  - dynamixel_motor (metapackage)
+-- ~~  - dynamixel_tutorials
+-- ~~  - dynamixel_controllers
+-- ~~  - rosserial (metapackage)
+-- ~~  - rosserial_arduino
+-- ~~  - rosserial_client
+-- ~~  - rosserial_msgs
+-- ~~  - rosserial_python
+-- ~~  - rosserial_xbee
+-- ~~  - dynamixel_msgs
+-- ~~  - au_opencv_example
+-- ~~  - beginner_tutorials
+-- ~~  - quickui
+-- ~~  - single_motor
+-- ~~  - single_motor2
+-- ~~  - au_crustcrawler_moveit
+-- ~~  - rosserial_server
+-- ~~  - rosserial_embeddedlinux
+-- ~~  - rosserial_windows
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'au_crustcrawler_base'
+-- ==> add_subdirectory(au_crustcrawler_base)
+-- +++ processing catkin package: 'dynamixel_driver'
+-- ==> add_subdirectory(dynamixel_motor/dynamixel_driver)
+-- +++ processing catkin metapackage: 'dynamixel_motor'
+-- ==> add_subdirectory(dynamixel_motor/dynamixel_motor)
+-- +++ processing catkin package: 'dynamixel_tutorials'
+-- ==> add_subdirectory(dynamixel_motor/dynamixel_tutorials)
+-- +++ processing catkin package: 'dynamixel_controllers'
+-- ==> add_subdirectory(dynamixel_motor/dynamixel_controllers)
+-- Using these message generators: gencpp;genlisp;genpy
+-- dynamixel_controllers: 0 messages, 9 services
+-- +++ processing catkin metapackage: 'rosserial'
+-- ==> add_subdirectory(rosserial/rosserial)
+-- +++ processing catkin package: 'rosserial_arduino'
+-- ==> add_subdirectory(rosserial/rosserial_arduino)
+-- Using these message generators: gencpp;genlisp;genpy
+-- rosserial_arduino: 1 messages, 1 services
+-- +++ processing catkin package: 'rosserial_client'
+-- ==> add_subdirectory(rosserial/rosserial_client)
+-- +++ processing catkin package: 'rosserial_msgs'
+-- ==> add_subdirectory(rosserial/rosserial_msgs)
+-- Using these message generators: gencpp;genlisp;genpy
+-- rosserial_msgs: 2 messages, 3 services
+-- +++ processing catkin package: 'rosserial_python'
+-- ==> add_subdirectory(rosserial/rosserial_python)
+-- +++ processing catkin package: 'rosserial_xbee'
+-- ==> add_subdirectory(rosserial/rosserial_xbee)
+-- +++ processing catkin package: 'dynamixel_msgs'
+-- ==> add_subdirectory(dynamixel_motor/dynamixel_msgs)
+-- Using these message generators: gencpp;genlisp;genpy
+-- dynamixel_msgs: 3 messages, 0 services
+-- +++ processing catkin package: 'au_opencv_example'
+-- ==> add_subdirectory(au_opencv_example)
+-- +++ processing catkin package: 'beginner_tutorials'
+-- ==> add_subdirectory(beginner_tutorials)
+-- Using these message generators: gencpp;genlisp;genpy
+-- beginner_tutorials: 0 messages, 1 services
+-- +++ processing catkin package: 'quickui'
+-- ==> add_subdirectory(quickui)
+-- +++ processing catkin package: 'single_motor'
+-- ==> add_subdirectory(single_motor)
+-- +++ processing catkin package: 'single_motor2'
+-- ==> add_subdirectory(single_motor2)
+-- +++ processing catkin package: 'au_crustcrawler_moveit'
+-- ==> add_subdirectory(au_crustcrawler_moveit)
+-- +++ processing catkin package: 'rosserial_server'
+-- ==> add_subdirectory(rosserial/rosserial_server)
+-- +++ processing catkin package: 'rosserial_embeddedlinux'
+-- ==> add_subdirectory(rosserial/rosserial_embeddedlinux)
+-- +++ processing catkin package: 'rosserial_windows'
+-- ==> add_subdirectory(rosserial/rosserial_windows)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ubuntu/catkin_ws/build
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu/catkin_ws/build/CMakeFiles /home/ubuntu/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_cpp.dir/build.make dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_cpp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/dynamixel_motor/dynamixel_controllers /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_controllers /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_cpp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_cpp.dir/build.make dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_cpp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_cpp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  6 7 8 9 10 11 12 13 14
+[ 13%] Built target dynamixel_controllers_generate_messages_cpp
+/usr/bin/make -f dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_lisp.dir/build.make dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/dynamixel_motor/dynamixel_controllers /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_controllers /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_lisp.dir/build.make dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  15 16 17 18 19 20 21 22 23
+[ 26%] Built target dynamixel_controllers_generate_messages_lisp
+/usr/bin/make -f dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_py.dir/build.make dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_py.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/dynamixel_motor/dynamixel_controllers /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_controllers /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_py.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_py.dir/build.make dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_py.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages_py.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  24 25 26 27 28 29 30 31 32 33
+[ 40%] Built target dynamixel_controllers_generate_messages_py
+/usr/bin/make -f dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages.dir/build.make dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/dynamixel_motor/dynamixel_controllers /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_controllers /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages.dir/build.make dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `dynamixel_motor/dynamixel_controllers/CMakeFiles/dynamixel_controllers_generate_messages.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles 
+[ 40%] Built target dynamixel_controllers_generate_messages
+/usr/bin/make -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/rosserial/rosserial_arduino /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/rosserial/rosserial_arduino /home/ubuntu/catkin_ws/build/rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  49 50
+[ 43%] Built target rosserial_arduino_generate_messages_lisp
+/usr/bin/make -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/rosserial/rosserial_arduino /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/rosserial/rosserial_arduino /home/ubuntu/catkin_ws/build/rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_py.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  51 52 53 54
+[ 49%] Built target rosserial_arduino_generate_messages_py
+/usr/bin/make -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/rosserial/rosserial_arduino /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/rosserial/rosserial_arduino /home/ubuntu/catkin_ws/build/rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages_cpp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  47 48
+[ 52%] Built target rosserial_arduino_generate_messages_cpp
+/usr/bin/make -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/rosserial/rosserial_arduino /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/rosserial/rosserial_arduino /home/ubuntu/catkin_ws/build/rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/build.make rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `rosserial/rosserial_arduino/CMakeFiles/rosserial_arduino_generate_messages.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles 
+[ 52%] Built target rosserial_arduino_generate_messages
+/usr/bin/make -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/rosserial/rosserial_msgs /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/rosserial/rosserial_msgs /home/ubuntu/catkin_ws/build/rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_py.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  65 66 67 68 69 70 71
+[ 62%] Built target rosserial_msgs_generate_messages_py
+/usr/bin/make -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/rosserial/rosserial_msgs /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/rosserial/rosserial_msgs /home/ubuntu/catkin_ws/build/rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  60 61 62 63 64
+[ 69%] Built target rosserial_msgs_generate_messages_lisp
+/usr/bin/make -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/rosserial/rosserial_msgs /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/rosserial/rosserial_msgs /home/ubuntu/catkin_ws/build/rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages_cpp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  55 56 57 58 59
+[ 76%] Built target rosserial_msgs_generate_messages_cpp
+/usr/bin/make -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/rosserial/rosserial_msgs /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/rosserial/rosserial_msgs /home/ubuntu/catkin_ws/build/rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_generate_messages.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles 
+[ 76%] Built target rosserial_msgs_generate_messages
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles 
+[ 76%] Built target std_msgs_generate_messages_lisp
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_lisp.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_lisp.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  37 38 39
+[ 81%] Built target dynamixel_msgs_generate_messages_lisp
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles 
+[ 81%] Built target std_msgs_generate_messages_py
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_py.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_py.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_py.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_py.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_py.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_py.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  40 41 42 43
+[ 86%] Built target dynamixel_msgs_generate_messages_py
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `dynamixel_motor/dynamixel_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles 
+[ 86%] Built target std_msgs_generate_messages_cpp
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_cpp.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_cpp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_cpp.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_cpp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages_cpp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  34 35 36
+[ 91%] Built target dynamixel_msgs_generate_messages_cpp
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs /home/ubuntu/catkin_ws/build/dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages.dir/build.make dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `dynamixel_motor/dynamixel_msgs/CMakeFiles/dynamixel_msgs_generate_messages.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles 
+[ 91%] Built target dynamixel_msgs_generate_messages
+/usr/bin/make -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/beginner_tutorials /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/beginner_tutorials /home/ubuntu/catkin_ws/build/beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  2
+[ 92%] Built target beginner_tutorials_generate_messages_lisp
+/usr/bin/make -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/beginner_tutorials /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/beginner_tutorials /home/ubuntu/catkin_ws/build/beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_cpp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  1
+[ 94%] Built target beginner_tutorials_generate_messages_cpp
+/usr/bin/make -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/beginner_tutorials /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/beginner_tutorials /home/ubuntu/catkin_ws/build/beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages_py.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  3 4
+[ 97%] Built target beginner_tutorials_generate_messages_py
+/usr/bin/make -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/beginner_tutorials /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/beginner_tutorials /home/ubuntu/catkin_ws/build/beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/build.make beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `beginner_tutorials/CMakeFiles/beginner_tutorials_generate_messages.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles 
+[ 97%] Built target beginner_tutorials_generate_messages
+/usr/bin/make -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gencpp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gencpp.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/rosserial/rosserial_msgs /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/rosserial/rosserial_msgs /home/ubuntu/catkin_ws/build/rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gencpp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gencpp.dir/build.make rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gencpp.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+make[2]: Nothing to be done for `rosserial/rosserial_msgs/CMakeFiles/rosserial_msgs_gencpp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles 
+[ 97%] Built target rosserial_msgs_gencpp
+/usr/bin/make -f rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/rosserial/rosserial_server /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/rosserial/rosserial_server /home/ubuntu/catkin_ws/build/rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles 72
+[ 98%] Building CXX object rosserial/rosserial_server/CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o
+cd /home/ubuntu/catkin_ws/build/rosserial/rosserial_server && /usr/bin/c++   -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"rosserial_server\" -DROSCONSOLE_BACKEND_LOG4CXX -I/home/ubuntu/catkin_ws/src/rosserial/rosserial_server/include -I/home/ubuntu/catkin_ws/devel/include -I/opt/ros/hydro/include    -o CMakeFiles/rosserial_server_serial_node.dir/src/serial_node.cpp.o -c /home/ubuntu/catkin_ws/src/rosserial/rosserial_server/src/serial_node.cpp
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  72
+[ 98%] Built target rosserial_server_serial_node
+/usr/bin/make -f rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/depend
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+cd /home/ubuntu/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu/catkin_ws/src /home/ubuntu/catkin_ws/src/rosserial/rosserial_server /home/ubuntu/catkin_ws/build /home/ubuntu/catkin_ws/build/rosserial/rosserial_server /home/ubuntu/catkin_ws/build/rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/make -f rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/build.make rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/build
+make[2]: Entering directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles 73
+[100%] Building CXX object rosserial/rosserial_server/CMakeFiles/rosserial_server_socket_node.dir/src/socket_node.cpp.o
+cd /home/ubuntu/catkin_ws/build/rosserial/rosserial_server && /usr/bin/c++   -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"rosserial_server\" -DROSCONSOLE_BACKEND_LOG4CXX -I/home/ubuntu/catkin_ws/src/rosserial/rosserial_server/include -I/home/ubuntu/catkin_ws/devel/include -I/opt/ros/hydro/include    -o CMakeFiles/rosserial_server_socket_node.dir/src/socket_node.cpp.o -c /home/ubuntu/catkin_ws/src/rosserial/rosserial_server/src/socket_node.cpp
+make[2]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu/catkin_ws/build/CMakeFiles  73
+[100%] Built target rosserial_server_socket_node
+make[1]: Leaving directory `/home/ubuntu/ITROB1-04-project/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu/catkin_ws/build/CMakeFiles 0

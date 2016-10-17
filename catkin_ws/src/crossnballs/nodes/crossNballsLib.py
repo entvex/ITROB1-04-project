@@ -1,9 +1,16 @@
 #!/usr/bin/python
 
-REQUESTBRINKPLACEMENT_KEY = 'requestBrinkplacement'
-RESPONDBRICKPLACMENT_KEY  = 'respondBrickplacement'
+# Interface keys
+REQUEST_BOARD_KEY = 'requestBoard'
+RESPOND_BOARD_KEY = 'respondBoard'
 
-DEFAULT_POS = [0.23, 0.0, 0.339]
+REQUEST_WAIT_FOR_MOVE_KEY = 'moveMade'
+RESPOND_WAIT_FOR_MOVE_KEY = 'waitForMove'
+
+REQUEST_BRICKPLACEMENT_KEY = 'requestBrinkPlacement'
+RESPOND_BRICKPLACMENT_KEY = 'respondBrickPlacement'
+
+ARM_DEFAULT_POS = [0.0, 0.0, 0.569]
 
 def coordinateconverter(x,y):
     convertConstant = 0.001154

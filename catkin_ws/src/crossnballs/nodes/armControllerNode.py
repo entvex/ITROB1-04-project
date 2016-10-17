@@ -14,28 +14,34 @@ from trajectory_msgs.msg import JointTrajectoryPoint
 from trajectory_msgs.msg import JointTrajectory
 import math
 
+
 class ArmControllerNode:
-
     def __init__(self):
-        self.subBrinkPlacement = rospy.Subscriber(REQUESTBRINKPLACEMENT_KEY,String,self.callbackBrickPlacment)
-        self.pubBrinkPlacement = rospy.Publisher(RESPONDBRICKPLACMENT_KEY,String)
-        print REQUESTBRINKPLACEMENT_KEY
+        self.DEFAULT_POS = [0.0, 0.0, 0.569]
+        self.subBrinkPlacement = rospy.Subscriber(REQUEST_BRICKPLACEMENT_KEY, String, self.callbackBrickPlacment)
+        self.pubBrinkPlacement = rospy.Publisher(RESPOND_BRICKPLACMENT_KEY, String)
 
-    def callbackBrickPlacment(self,data):
+    def callbackBrickPlacment(self, data):
         print 'callbackBrickPlacment'
-        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
-        self.publish(data.data)
 
-    def publishBrickPlacment(self,data):
+        print data.data
+
+        self.followJointTrajectoryTest()
+        self.send_command()
+
+        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+        #publishBrickPlacment()
+
+
+    def publishBrickPlacment(self, data):
         print 'publishBrickPlacment'
         self.pubBrinkPlacement.publish(data)
 
-    def invkin(self,xyz):
+    def invkin(self, xyz):
         """
         Python implementation of the the inverse kinematics for the crustcrawler
         Input: xyz position
         Output: Angels for each joint: q1,q2,q3,q4
-
         You might adjust parameters (d1,a1,a2,d4).
         The robot model shown in rviz can be adjusted accordingly by editing au_crustcrawler_ax12.urdf
         """
@@ -56,7 +62,7 @@ class ArmControllerNode:
         # Calulate radius
         r = math.sqrt(math.pow(x - a1 * math.cos(q1), 2) + math.pow(y - a1 * math.sin(q1), 2))
         s = z - d1
-        D = (math.pow(r, 2) + math.pow(s, 2) - math.pow(a2, 2) - math.pow(d4, 2)) / (2.*a2*d4)
+        D = (math.pow(r, 2) + math.pow(s, 2) - math.pow(a2, 2) - math.pow(d4, 2)) / (2. * a2 * d4)
 
         # Calulate Q2 Q3
         q3 = math.atan2(-math.sqrt(1 - math.pow(D, 2)), D)
@@ -68,13 +74,13 @@ class ArmControllerNode:
         print q2
         print q3
         print q4
-        # TODO VEND FORTEGN SÅ DEN ER ALBUE OP!!!
-        return q1, q2-math.pi/2, q3, q4
+        return q1, q2 - math.pi / 2, q3, q4
 
-    def followJointTrajectoryTest(self):
+    def followJointTrajectoryTest(self,x=0,y=0):
         print 'followJointTrajectoryTest'
         self.N_JOINTS = 4
-        self.client = actionlib.SimpleActionClient("/arm_controller/follow_joint_trajectory", FollowJointTrajectoryAction)
+        self.client = actionlib.SimpleActionClient("/arm_controller/follow_joint_trajectory",
+                                                   FollowJointTrajectoryAction)
 
         self.joint_positions = []
         self.names = ["joint1",
@@ -83,21 +89,15 @@ class ArmControllerNode:
                       "joint4"
                       ]
         # the list of xyz points we want to plan
-        xyz_positions = [
-            [0.310426, 0.058854, 0.0],
-            [0.23, 0.0, 0.339],
-            [0.188102, -0.064624, 0.0],
-            [0.23, 0.0, 0.339],
-        ]
+        xyz_positions = [x, y, 0.0]
 
         # initial duration
         dur = rospy.Duration(1)
 
         # construct a list of joint positions by calling invkin for each xyz point
-        for p in xyz_positions:
-            jtp = JointTrajectoryPoint(positions=self.invkin(p), velocities=[0.5] * self.N_JOINTS, time_from_start=dur)
-            dur += rospy.Duration(2)
-            self.joint_positions.append(jtp)
+        jtp = JointTrajectoryPoint(positions=self.invkin(xyz_positions), velocities=[0.5] * self.N_JOINTS, time_from_start=dur)
+        dur += rospy.Duration(2)
+        self.joint_positions.append(jtp)
 
         self.jt = JointTrajectory(joint_names=self.names, points=self.joint_positions)
         self.goal = FollowJointTrajectoryGoal(trajectory=self.jt, goal_time_tolerance=dur + rospy.Duration(2))
@@ -109,20 +109,32 @@ class ArmControllerNode:
         self.client.send_goal(self.goal)
         self.client.wait_for_result()
         print self.client.get_result()
-    
+
+    def coordinateconverter(x, y):
+        convertConstant = 0.001154
+
+        xOffset = 304
+        yOffset = 382
+
+        newX = -(y - yOffset) * convertConstant
+        newY = -(x - xOffset) * convertConstant
+
+        return newX, newY
+
+
 if __name__ == '__main__':
 
-    #Always load crossNballsLib first
+    # Always load crossNballsLib first
     execfile('/home/ubuntu/ITROB1-04-project/catkin_ws/src/crossnballs/nodes/crossNballsLib.py')
     rospy.init_node('ArmControllerNode', anonymous=False)
     ArmController = ArmControllerNode()
 
-    x,y = coordinateconverter(304,167)
-    print str(x) + " " + str(y)
+    #x, y = coordinateconverter(304, 167)
+    #print str(x) + " " + str(y)
 
-    print 'followJointTrajectoryTest'
-    ArmController.followJointTrajectoryTest()
-    ArmController.send_command()
+    #print 'followJointTrajectoryTest'
+    #ArmController.followJointTrajectoryTest()
+    #ArmController.send_command()
 
     try:
         rospy.spin()
