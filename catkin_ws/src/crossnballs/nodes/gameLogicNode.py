@@ -12,8 +12,8 @@ class gameLogic:
         self.currentBrick = None
         self.waitForResponse = False
 
-        self.subVisionBoard = rospy.Subscriber('respondBoard',String,self.callbackVisionBoard)
-        self.pubVisionBoard = rospy.Publisher('requestBoard',String)
+        self.subVisionBoard = rospy.Subscriber(RESPOND_BOARD_KEY,String,self.callbackVisionBoard)
+        self.pubVisionBoard = rospy.Publisher(REQUEST_BOARD_KEY,String)
 
         self.subVisionMove = rospy.Subscriber(RESPOND_WAIT_FOR_MOVE_KEY,String,self.callbackVisionMove)
         self.pubVisionMove = rospy.Publisher(REQUEST_WAIT_FOR_MOVE_KEY,String)
@@ -21,11 +21,14 @@ class gameLogic:
         self.subArmController = rospy.Subscriber(RESPOND_BRICKPLACMENT_KEY, String, self.callbackArmController)
         self.pubArmController = rospy.Publisher(REQUEST_BRICKPLACEMENT_KEY,  String)
 
-        self.subVisionBrick = rospy.Subscriber('respondFreeBrick',String,self.callbackVisionBrick)
-        self.pubVisionBrick = rospy.Publisher('requestFreeBrick', String)
+        self.subVisionBrick = rospy.Subscriber(RESPOND_FREEBRICK_KEY,String,self.callbackVisionBrick)
+        self.pubVisionBrick = rospy.Publisher(REQUEST_FREEBRICK_KEY, String)
 
     def gameloop(self):
         print "gameloop running"
+
+        self.publishArmController("DEFAULT_POS")
+        self.waitResponse()
 
         self.publishVisionBoard("getBoard")
         self.waitResponse()
@@ -35,11 +38,8 @@ class gameLogic:
         self.publishVisionBrick("red")
         self.waitResponse()
 
-        self.publishArmController(self.currentBrick)
+        self.publishArmController(self.currentBrick + ",7") #TODO correct this ,4
         self.waitResponse()
-
-
-
 
     def waitResponse(self):
         print "waitResponse"
@@ -70,26 +70,31 @@ class gameLogic:
         self.waitForResponse = False
 
     def publishVisionBoard(self,data):
+        print "publishVisionBoard"
         self.waitForResponse = True
         self.pubVisionBoard.publish(data)
 
     def publishVisionMove(self, data):
+        print "publishVisionMove"
         self.waitForResponse = True
         self.pubVisionMove.publish(data)
 
     def publishVisionBrick(self, data):
+        print "publishVisionBrick"
         self.waitForResponse = True
         self.pubVisionBrick.publish(data)
 
     def publishArmController(self, data):
+        print "publishArmController"
         self.waitForResponse = True
-        self.pubVisionBrick.publish(data)
+        self.pubArmController.publish(data)
     
 if __name__ == '__main__':
     # Always load crossNballsLib first
     execfile('/home/ubuntu/ITROB1-04-project/catkin_ws/src/crossnballs/nodes/crossNballsLib.py')
     gameLogic = gameLogic()
     rospy.init_node('gameLogic', anonymous=False)
+    time.sleep(1)
     gameLogic.gameloop()
     try:
         rospy.spin()

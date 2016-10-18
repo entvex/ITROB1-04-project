@@ -12,18 +12,20 @@ import math
 
 class visionNode:
     def __init__(self):
-        self.subVisionBoard = rospy.Subscriber('requestBoard', String, self.callbackVisionBoard)
-        self.pubVisionBoard = rospy.Publisher('respondBoard', String)
+        self.subVisionBoard = rospy.Subscriber(REQUEST_BOARD_KEY, String, self.callbackVisionBoard)
+        self.pubVisionBoard = rospy.Publisher(RESPOND_BOARD_KEY, String)
 
         self.subVisionMove = rospy.Subscriber(REQUEST_WAIT_FOR_MOVE_KEY, String, self.callbackVisionMove)
         self.pubVisionMove = rospy.Publisher(RESPOND_WAIT_FOR_MOVE_KEY, String)
 
-        self.subVisionBrick = rospy.Subscriber('requestFreeBrick', String, self.callbackVisionBrick)
-        self.pubVisionBrick = rospy.Publisher('respondFreeBrick', String)
+        self.subVisionBrick = rospy.Subscriber(REQUEST_FREEBRICK_KEY, String, self.callbackVisionBrick)
+        self.pubVisionBrick = rospy.Publisher(RESPOND_FREEBRICK_KEY, String)
 
     def callbackVisionBoard(self, data):
         print 'callbackVisionBoard'
         rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
+        self.getBoard()
+
         # TODO return correct board status as an array
         self.pubVisionBoard.publish(str(data.data))
 
@@ -51,12 +53,36 @@ class visionNode:
         if data.data == "blue":
             self.pubVisionBrick.publish(blueBricks[0])
 
+    def getBoard(self):
+        print "getBoard"
+        board = [0,0,0,0,0,0,0,0,0]
+        BlueBricks, RedBricks = self.brickDectetor()
+
+        xlower = [234,285,336,234,285,336,234,285,336]
+        xupper = [271,322,379,271,322,379,271,322,379]
+        ylower = [90,90,90,145,145,145,196,196,196]
+        yupper = [130,130,130,183,183,183,238,238,238]
+
+        i = 0
+
+        for loop in xlower:
+            for RedBrick in RedBricks:
+                if( RedBrick[0] >= xlower[i] and RedBrick[0] <= xupper[i] and RedBrick[1] >= ylower[i] and RedBrick[1] <= yupper[i]):
+                    board[i] = 2
+
+            for BlueBrick in BlueBricks:
+                if( BlueBrick[0] >= xlower[i] and BlueBrick[0] <= xupper[i] and BlueBrick[1] >= ylower[i] and BlueBrick[1] <= yupper[i]):
+                    board[i] = 1
+            i = i+1
+
+        print board
+
     def brickDectetor(self):
         print "brickDectetor"
-        # img = self.get_from_webcam()
+        imgOriginal = self.get_from_webcam()
         # cv2.imwrite()
-        imgOrginal = cv2.imread("image.jpg")
-        imgcircle = imgOrginal
+        #imgOrginal = cv2.imread("image.jpg")
+        imgcircle = imgOriginal
 
         imgcircle = cv2.medianBlur(imgcircle, 7)
         # cv2.imshow('merp',img)
@@ -64,8 +90,7 @@ class visionNode:
         imgGRAY = cv2.cvtColor(imgcircle, cv2.COLOR_BGR2GRAY)
         # cv2.imshow(" imgGRAY ",imgGRAY)
 
-        circles = cv2.HoughCircles(imgGRAY, cv.CV_HOUGH_GRADIENT, 1, 25, param1=35, param2=15, minRadius=13,
-                                   maxRadius=20)
+        circles = cv2.HoughCircles(imgGRAY, cv.CV_HOUGH_GRADIENT, 1, 25, param1=35, param2=15, minRadius=13,maxRadius=20)
 
         circles = np.uint16(np.around(circles))
         for i in circles[0, :]:
@@ -83,13 +108,13 @@ class visionNode:
 
         for circle in circles[0]:
             print "x" + str(circle[0]) + "y" + str(circle[1])
-            print imgOrginal[circle[1], circle[0]]
+            print imgOriginal[circle[1], circle[0]]
             # imgOrginal[circle[1],circle[0]]=[255,255,255]
 
-            if (imgOrginal[circle[1], circle[0]][0] > 160):
+            if (imgOriginal[circle[1], circle[0]][0] > 100):
                 BlueBricks.append([circle[0], circle[1]])
 
-            if (imgOrginal[circle[1], circle[0]][2] > 160):
+            if (imgOriginal[circle[1], circle[0]][2] > 140):
                 RedBricks.append([circle[0], circle[1]])
 
         # cv2.imshow('detected circles', imgOrginal)
@@ -102,6 +127,7 @@ class visionNode:
     def get_from_webcam(self):
         print "try fetch from webcam..."
         stream = urllib.urlopen('http://192.168.0.20/image/jpeg.cgi')
+        #TODO HANDLE Corrupt JPEG data: 20 extraneous bytes before marker 0xd9
 
         bytes = ''
         bytes += stream.read(64500)
@@ -112,16 +138,17 @@ class visionNode:
             jpg = bytes[a:b + 2]
             bytes = bytes[b + 2:]
             i = cv2.imdecode(np.fromstring(jpg, dtype=np.uint8), cv2.CV_LOAD_IMAGE_COLOR)
+            cv2.imshow('testPicture',i)
             return i
         else:
             print "did not receive image, try increasing the buffer size in line 13:"
-
 
 if __name__ == '__main__':
     # Always load crossNballsLib first
     execfile('/home/ubuntu/ITROB1-04-project/catkin_ws/src/crossnballs/nodes/crossNballsLib.py')
     visionNode = visionNode()
     rospy.init_node('visionNode', anonymous=False)
+    visionNode.getBoard()
     try:
         rospy.spin()
     except rospy.ROSInterruptException:

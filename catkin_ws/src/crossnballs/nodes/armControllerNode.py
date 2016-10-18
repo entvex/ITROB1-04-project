@@ -13,25 +13,69 @@ from control_msgs.msg import FollowJointTrajectoryGoal
 from trajectory_msgs.msg import JointTrajectoryPoint
 from trajectory_msgs.msg import JointTrajectory
 import math
+import time
 
 
 class ArmControllerNode:
     def __init__(self):
+        self.waitForResponse = False
         self.DEFAULT_POS = [0.0, 0.0, 0.569]
+
         self.subBrinkPlacement = rospy.Subscriber(REQUEST_BRICKPLACEMENT_KEY, String, self.callbackBrickPlacment)
         self.pubBrinkPlacement = rospy.Publisher(RESPOND_BRICKPLACMENT_KEY, String)
 
+        self.subGripper = rospy.Subscriber(RESPOND_GRIPPER_KEY, String, self.callbackGrip)
+        self.pubGripper = rospy.Publisher(REQUEST_GRIPPER_KEY, String)
+
+        self.boardPositions = [[253, 113],[304, 113],[360, 113],
+                               [253, 167],[304, 167],[360, 167],
+                               [253, 219],[304, 219],[360, 219]]
+
+        #self.pubGripper.publish("RELEASE")
+
+    def callbackGrip(self, data):
+        print 'callbackGrip'
+        self.waitForResponse = False
+
+
     def callbackBrickPlacment(self, data):
         print 'callbackBrickPlacment'
-
-        print data.data
-
-        self.followJointTrajectoryTest()
-        self.send_command()
-
         rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
-        #publishBrickPlacment()
 
+        if data.data == "DEFAULT_POS":
+            self.moveToDefaultPosition()
+            self.send_command()
+            self.pubBrinkPlacement.publish("done")
+
+        else :
+            coordinate = data.data.split(',', 3)
+
+            x = float(coordinate[0])
+            y = float(coordinate[1])
+
+            self.followJointTrajectoryTest(x=x,y=y)
+            self.send_command()
+
+            self.waitForResponse = True
+            self.pubGripper.publish("GRIP")
+            self.waitResponse()
+
+            self.moveToDefaultPosition()
+            self.send_command()
+
+            # Place on board
+            time.sleep(2)
+
+            self.followJointTrajectoryTest(x=float(self.boardPositions[int(coordinate[2])][0]), y=float(self.boardPositions[int(coordinate[2])][1]))
+            self.send_command()
+
+            self.waitForResponse = True
+            self.pubGripper.publish("RELEASE")
+            self.waitResponse()
+
+            self.moveToDefaultPosition()
+            self.send_command()
+            self.pubBrinkPlacement.publish("done")
 
     def publishBrickPlacment(self, data):
         print 'publishBrickPlacment'
@@ -89,13 +133,39 @@ class ArmControllerNode:
                       "joint4"
                       ]
         # the list of xyz points we want to plan
-        xyz_positions = [x, y, 0.0]
+        newX, newY = self.coordinateconverter(x,y)
+
+        xyz_positions = [newX, newY, 0.02]
 
         # initial duration
-        dur = rospy.Duration(1)
+        dur = rospy.Duration(3)
 
         # construct a list of joint positions by calling invkin for each xyz point
         jtp = JointTrajectoryPoint(positions=self.invkin(xyz_positions), velocities=[0.5] * self.N_JOINTS, time_from_start=dur)
+        dur += rospy.Duration(2)
+        self.joint_positions.append(jtp)
+
+        self.jt = JointTrajectory(joint_names=self.names, points=self.joint_positions)
+        self.goal = FollowJointTrajectoryGoal(trajectory=self.jt, goal_time_tolerance=dur + rospy.Duration(4))
+
+    def moveToDefaultPosition(self):
+        print "moveToDefaultPosition"
+        self.N_JOINTS = 4
+        self.client = actionlib.SimpleActionClient("/arm_controller/follow_joint_trajectory",
+                                                   FollowJointTrajectoryAction)
+
+        self.joint_positions = []
+        self.names = ["joint1",
+                      "joint2",
+                      "joint3",
+                      "joint4"
+                      ]
+        # initial duration
+        dur = rospy.Duration(3)
+
+        # construct a list of joint positions by calling invkin for each xyz point
+        jtp = JointTrajectoryPoint(positions=self.invkin(self.DEFAULT_POS), velocities=[0.5] * self.N_JOINTS,
+                                   time_from_start=dur)
         dur += rospy.Duration(2)
         self.joint_positions.append(jtp)
 
@@ -110,17 +180,21 @@ class ArmControllerNode:
         self.client.wait_for_result()
         print self.client.get_result()
 
-    def coordinateconverter(x, y):
-        convertConstant = 0.001154
+    def coordinateconverter(self,x, y):
+        self.convertConstant = 0.001154
 
-        xOffset = 304
-        yOffset = 382
+        xOffset = 304.00
+        yOffset = 382.00
 
-        newX = -(y - yOffset) * convertConstant
-        newY = -(x - xOffset) * convertConstant
+        newX = -(y - yOffset) * self.convertConstant
+        newY = -(x - xOffset) * self.convertConstant
 
         return newX, newY
 
+    def waitResponse(self):
+        print "waitResponse"
+        while self.waitForResponse:
+            time.sleep(1)
 
 if __name__ == '__main__':
 
@@ -128,13 +202,7 @@ if __name__ == '__main__':
     execfile('/home/ubuntu/ITROB1-04-project/catkin_ws/src/crossnballs/nodes/crossNballsLib.py')
     rospy.init_node('ArmControllerNode', anonymous=False)
     ArmController = ArmControllerNode()
-
-    #x, y = coordinateconverter(304, 167)
-    #print str(x) + " " + str(y)
-
-    #print 'followJointTrajectoryTest'
-    #ArmController.followJointTrajectoryTest()
-    #ArmController.send_command()
+    time.sleep(1)
 
     try:
         rospy.spin()
