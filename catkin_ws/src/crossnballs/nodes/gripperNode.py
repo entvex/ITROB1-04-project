@@ -17,7 +17,7 @@ class gripper_node:
         if data.data == "GRIP":
             self.grip(0.6)
         elif data.data == "RELEASE":
-            self.grip(0.3)
+            self.grip(0.0)
         else:
             print "Wrong command given"
 
@@ -36,5 +36,5 @@ if __name__ == "__main__":
     rospy.init_node("gripper_node_test")
     node = gripper_node()
     time.sleep(1)
-    node.grip(0.3)
+    node.grip(0.0)
     rospy.spin()

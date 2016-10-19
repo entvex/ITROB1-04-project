@@ -27,9 +27,9 @@ class ArmControllerNode:
         self.subGripper = rospy.Subscriber(RESPOND_GRIPPER_KEY, String, self.callbackGrip)
         self.pubGripper = rospy.Publisher(REQUEST_GRIPPER_KEY, String)
 
-        self.boardPositions = [[253, 113],[304, 113],[360, 113],
-                               [253, 167],[304, 167],[360, 167],
-                               [253, 219],[304, 219],[360, 219]]
+        self.boardPositions = [[255, 111],[306, 111],[361, 111],
+                               [254, 165],[307, 164],[362, 164],
+                               [255, 217],[307, 217],[362, 217]]
 
         #self.pubGripper.publish("RELEASE")
 
@@ -75,6 +75,9 @@ class ArmControllerNode:
 
             self.moveToDefaultPosition()
             self.send_command()
+
+            time.sleep(4)
+
             self.pubBrinkPlacement.publish("done")
 
     def publishBrickPlacment(self, data):
@@ -135,18 +138,19 @@ class ArmControllerNode:
         # the list of xyz points we want to plan
         newX, newY = self.coordinateconverter(x,y)
 
-        xyz_positions = [newX, newY, 0.02]
+        xyz_positions = [[newX, newY, 0.13],[newX, newY, 0.023]]
 
         # initial duration
-        dur = rospy.Duration(3)
+        dur = rospy.Duration(1)
 
+        for p in xyz_positions:
         # construct a list of joint positions by calling invkin for each xyz point
-        jtp = JointTrajectoryPoint(positions=self.invkin(xyz_positions), velocities=[0.5] * self.N_JOINTS, time_from_start=dur)
-        dur += rospy.Duration(2)
-        self.joint_positions.append(jtp)
+            jtp = JointTrajectoryPoint(positions=self.invkin(p), velocities=[0.5] * self.N_JOINTS, time_from_start=dur)
+            dur += rospy.Duration(2)
+            self.joint_positions.append(jtp)
 
         self.jt = JointTrajectory(joint_names=self.names, points=self.joint_positions)
-        self.goal = FollowJointTrajectoryGoal(trajectory=self.jt, goal_time_tolerance=dur + rospy.Duration(4))
+        self.goal = FollowJointTrajectoryGoal(trajectory=self.jt, goal_time_tolerance=dur + rospy.Duration(2))
 
     def moveToDefaultPosition(self):
         print "moveToDefaultPosition"
@@ -161,7 +165,7 @@ class ArmControllerNode:
                       "joint4"
                       ]
         # initial duration
-        dur = rospy.Duration(3)
+        dur = rospy.Duration(2)
 
         # construct a list of joint positions by calling invkin for each xyz point
         jtp = JointTrajectoryPoint(positions=self.invkin(self.DEFAULT_POS), velocities=[0.5] * self.N_JOINTS,
@@ -181,10 +185,10 @@ class ArmControllerNode:
         print self.client.get_result()
 
     def coordinateconverter(self,x, y):
-        self.convertConstant = 0.001154
+        self.convertConstant = 0.001139
 
-        xOffset = 304.00
-        yOffset = 382.00
+        xOffset = 300.00
+        yOffset = 384.00
 
         newX = -(y - yOffset) * self.convertConstant
         newY = -(x - xOffset) * self.convertConstant

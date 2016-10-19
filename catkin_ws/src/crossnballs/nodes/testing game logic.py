@@ -56,7 +56,7 @@ class gamelogic:
 
     def getRobotMove(self, board, brickRobot,brickPlayer):
         board = board[:]
-        BEST_MOVES = (4, 8, 6, 4, 2, 1, 3, 5, 7);
+        BEST_MOVES = (4, 8, 6, 0, 2, 1, 3, 5, 7);
 
         #can I win this turn
         for move in self.possibleMoves(board):
