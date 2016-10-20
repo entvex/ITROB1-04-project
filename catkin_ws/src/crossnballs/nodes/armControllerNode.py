@@ -31,17 +31,11 @@ class ArmControllerNode:
                                [254, 165],[307, 164],[362, 164],
                                [255, 217],[307, 217],[362, 217]]
 
-        #self.pubGripper.publish("RELEASE")
-
     def callbackGrip(self, data):
-        print 'callbackGrip'
         self.waitForResponse = False
 
 
     def callbackBrickPlacment(self, data):
-        print 'callbackBrickPlacment'
-        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
-
         if data.data == "DEFAULT_POS":
             self.moveToDefaultPosition()
             self.send_command()
@@ -81,17 +75,9 @@ class ArmControllerNode:
             self.pubBrinkPlacement.publish("done")
 
     def publishBrickPlacment(self, data):
-        print 'publishBrickPlacment'
         self.pubBrinkPlacement.publish(data)
 
     def invkin(self, xyz):
-        """
-        Python implementation of the the inverse kinematics for the crustcrawler
-        Input: xyz position
-        Output: Angels for each joint: q1,q2,q3,q4
-        You might adjust parameters (d1,a1,a2,d4).
-        The robot model shown in rviz can be adjusted accordingly by editing au_crustcrawler_ax12.urdf
-        """
         print 'invkin'
 
         d1 = 0.166  # m (height of 2nd joint)
@@ -124,7 +110,6 @@ class ArmControllerNode:
         return q1, q2 - math.pi / 2, q3, q4
 
     def followJointTrajectoryTest(self,x=0,y=0):
-        print 'followJointTrajectoryTest'
         self.N_JOINTS = 4
         self.client = actionlib.SimpleActionClient("/arm_controller/follow_joint_trajectory",
                                                    FollowJointTrajectoryAction)
@@ -153,7 +138,6 @@ class ArmControllerNode:
         self.goal = FollowJointTrajectoryGoal(trajectory=self.jt, goal_time_tolerance=dur + rospy.Duration(2))
 
     def moveToDefaultPosition(self):
-        print "moveToDefaultPosition"
         self.N_JOINTS = 4
         self.client = actionlib.SimpleActionClient("/arm_controller/follow_joint_trajectory",
                                                    FollowJointTrajectoryAction)
@@ -177,12 +161,9 @@ class ArmControllerNode:
         self.goal = FollowJointTrajectoryGoal(trajectory=self.jt, goal_time_tolerance=dur + rospy.Duration(2))
 
     def send_command(self):
-        print 'send_command'
         self.client.wait_for_server()
-        print self.goal
         self.client.send_goal(self.goal)
         self.client.wait_for_result()
-        print self.client.get_result()
 
     def coordinateconverter(self,x, y):
         self.convertConstant = 0.001139
@@ -196,7 +177,6 @@ class ArmControllerNode:
         return newX, newY
 
     def waitResponse(self):
-        print "waitResponse"
         while self.waitForResponse:
             time.sleep(1)
 

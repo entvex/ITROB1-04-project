@@ -1,0 +1,70 @@
+#include <ros.h>
+#include <std_msgs/String.h>
+
+ros::NodeHandle nh;
+
+std_msgs::String pushedMsg;
+
+const int greenLed = 2;                 // Green LED digital pin
+const int redLed     = 3;                 // Red LED digital pin
+const int button      = 4;                 // Button digital pin
+
+ros::Publisher arduinoPub("respondArduino", &pushedMsg);
+
+void callbackArduino( const std_msgs::String& request){
+  if (request.data[0] == 'r'){
+    digitalWrite(redLed, HIGH);
+    digitalWrite(greenLed,LOW);
+  }
+  else if (request.data[0] == 'g'){
+    digitalWrite(greenLed, HIGH);
+    digitalWrite(redLed,LOW);
+  }
+}
+
+
+ros::Subscriber<std_msgs::String> arduinoSub("requestArduino", &callbackArduino );
+
+
+bool lastReading;
+long lastDebounceTime=0;
+long debounceDelay=50;
+bool published = true;
+
+void setup()
+{
+  nh.initNode();
+  nh.advertise(arduinoPub);
+  nh.subscribe(arduinoSub);
+
+  pinMode(greenLed, OUTPUT); 
+  pinMode(redLed, OUTPUT); 
+  pinMode(button, INPUT);
+
+  digitalWrite(button, HIGH);
+
+  lastReading = !digitalRead(button);
+}
+
+void loop()
+{
+  bool reading = !digitalRead(button);
+
+  if (lastReading != reading){
+    lastDebounceTime = millis();
+    published = false;
+  }
+
+  //if the button value has not changed for the debounce delay, we know its stable
+  if ( !published && (millis() - lastDebounceTime)  > debounceDelay) {
+    if (reading) {
+      pushedMsg.data = "clicked";
+      arduinoPub.publish(&pushedMsg);
+      published = true;
+    }
+  }
+
+  lastReading = reading;
+
+  nh.spinOnce();
+}

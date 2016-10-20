@@ -16,5 +16,15 @@ RESPOND_GRIPPER_KEY = 'respondGrip'
 REQUEST_FREEBRICK_KEY = 'respondFreeBrick'
 RESPOND_FREEBRICK_KEY = 'requestFreeBrick'
 
+GET_BOARD = "GETBOARD"
+
+BRICK_RED = "red"
+
+TIE = "t"
+CONTINUE_GAME = "C"
+EMPTY_SLOT = "0"
+RED_SLOT = "2"
+BLUE_SLOT = "1"
+
 if __name__ == '__main__':
     print "Library loaded"

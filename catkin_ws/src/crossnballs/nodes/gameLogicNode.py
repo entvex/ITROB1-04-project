@@ -12,12 +12,10 @@ class gameLogic:
         self.board = []
         self.currentBrick = None
         self.waitForResponse = False
+        self.gameOver = False
 
         self.subVisionBoard = rospy.Subscriber(RESPOND_BOARD_KEY,String,self.callbackVisionBoard)
         self.pubVisionBoard = rospy.Publisher(REQUEST_BOARD_KEY,String)
-
-        self.subVisionMove = rospy.Subscriber(RESPOND_WAIT_FOR_MOVE_KEY,String,self.callbackVisionMove)
-        self.pubVisionMove = rospy.Publisher(REQUEST_WAIT_FOR_MOVE_KEY,String)
 
         self.subArmController = rospy.Subscriber(RESPOND_BRICKPLACMENT_KEY, String, self.callbackArmController)
         self.pubArmController = rospy.Publisher(REQUEST_BRICKPLACEMENT_KEY,  String)
@@ -25,8 +23,12 @@ class gameLogic:
         self.subVisionBrick = rospy.Subscriber(RESPOND_FREEBRICK_KEY,String,self.callbackVisionBrick)
         self.pubVisionBrick = rospy.Publisher(REQUEST_FREEBRICK_KEY, String)
 
+        self.pubArduino = rospy.Publisher("requestArduino",String)
+        self.subArduino = rospy.Subscriber("respondArduino",String,self.callbackArduino)
+
     def gameloop(self):
         print "gameloop running"
+
 
         self.publishArmController("DEFAULT_POS")
         self.waitResponse()
@@ -34,18 +36,20 @@ class gameLogic:
 
         while(True):
 
+
+
             print "# 1 CHECK IF BOARD IS EMPTY"
             boardNotEmpty = True
 
             print "Checking Board"
             while boardNotEmpty:
-                self.publishVisionBoard("getBoard")
+                self.publishVisionBoard(GET_BOARD)
                 self.waitResponse()
                 time.sleep(1)
                 boardNotEmpty = False
+                print "2 IF NOT EMPTY PRINT ERROR MESSAGE, GO TO 1"
                 for boardSpot in self.board:
-                    # 2 IF NOT EMPTY PRINT ERROR MESSAGE, GO TO 1
-                    if boardSpot == '1' or boardSpot == '2':
+                    if boardSpot == BLUE_SLOT or boardSpot == RED_SLOT:
                         boardNotEmpty = True
                         print "Error: Please remove bricks from board:\n" + str(self.board)
 
@@ -53,13 +57,14 @@ class gameLogic:
             print "# 2.1 LOOP WHILE BOARD CONTAINS NO 0's AND NO WINNER"
             gameFinished = False
             while not gameFinished:
+                self.pubArduino.publish("red")
                 gameCheck = self.checkForWin(self.board)
-                if gameCheck == "C":
+                if gameCheck == CONTINUE_GAME:
                     print "# 2.2 FIND BEST MOVE"
-                    move = self.getRobotMove(self.board, "2", "1")
+                    move = self.getRobotMove(self.board, RED_SLOT, BLUE_SLOT)
 
                     print "# 2.3 ROBOT GET RED BRICK"
-                    self.publishVisionBrick("red")
+                    self.publishVisionBrick(BRICK_RED)
                     self.waitResponse()
 
                     print "# 2.4 PLACE BRICK"
@@ -68,12 +73,13 @@ class gameLogic:
                     self.waitResponse()
 
                     print "# 2.4.1 IF WINNING, GO TO 3"
-                    self.publishVisionBoard("getBoard")
+                    self.publishVisionBoard(GET_BOARD)
                     self.waitResponse()
                     gameCheck = self.checkForWin(self.board)
 
-                    if gameCheck == "C":
+                    if gameCheck == CONTINUE_GAME:
                         print "# 2.5 WAIT FOR PLAYER TO MAKE MOVE - WAIT FOR BOARD TO UPDATE TO CONTAIN AS MANY BLUES AS REDS"
+                        self.pubArduino.publish("green")
                         playerTurn = True
 
                         while playerTurn:
@@ -82,10 +88,10 @@ class gameLogic:
                             red = 0
 
                             for boardSpot in self.board:
-                                if boardSpot == "1":
+                                if boardSpot == BLUE_SLOT:
                                     blue += 1
 
-                                elif boardSpot == "2":
+                                elif boardSpot == RED_SLOT:
                                     red += 1
                             print "Blue: " + str(blue) + " - Red: " + str(red)
 
@@ -94,7 +100,7 @@ class gameLogic:
 
                             else:
                                 time.sleep(2)
-                                self.publishVisionBoard("getBoard")
+                                self.publishVisionBoard(GET_BOARD)
                                 self.waitResponse()
 
                         print "# 2.6 GO TO STEP 2.1"
@@ -104,87 +110,74 @@ class gameLogic:
                     print "#3 PRINT WINNER MESSAGE, GO TO 1"
                     gameFinished = True
 
-                    if gameCheck == "1":
-                        print "Player WINZ! cheating bastard!"
-                    elif gameCheck == "2":
-                        print "Robot WINS! I am here to steal your ressources!"
+                    if gameCheck == BLUE_SLOT:
+                        print "Player WINZ! You cheated!"
+                    elif gameCheck == RED_SLOT:
+                        print "Robot WINS! Like i always do!"
                     else:
-                        print "It's a TIE! Fuck you..."
+                        print "It's a tie"
 
-                    raw_input("Press enter to play again")
-
-
-
-        #self.publishVisionBrick("red")
-        #self.waitResponse()
+                    self.gameOver = True
+                    print "Game over please press your arduino to start a new game"
+                    while (self.gameOver):
+                        time.sleep(1)
 
 
     def waitResponse(self):
-        print "waitResponse"
         while self.waitForResponse:
             time.sleep(1)
 
     def callbackVisionBoard(self,data):
-        print 'callbackVisionBoard'
-        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
         self.board = data.data.split(",", 9)
         self.board = numpy.delete(self.board, 9)
         self.waitForResponse = False
 
     def callbackVisionBrick(self,data):
-        print 'callbackVisionBrick'
-        print "red brick given: " + data.data
         self.currentBrick = data.data
         self.waitForResponse = False
 
-    def callbackVisionMove(self, data):
-        print 'callbackVisionMove'
-        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
-        #self.pubVisionMove(data.data)
+    def callbackArmController(self,data):
         self.waitForResponse = False
 
-    def callbackArmController(self,data):
-        print 'callbackArmController'
-        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
-        #self.pubArmController(data.data)
-        self.waitForResponse = False
+    def callbackArduino(self,data):
+        print "Arduino: " + str(data.data)
+        self.gameOver = False
 
     def publishVisionBoard(self,data):
-        print "publishVisionBoard"
         self.waitForResponse = True
         self.pubVisionBoard.publish(data)
 
     def publishVisionMove(self, data):
-        print "publishVisionMove"
         self.waitForResponse = True
         self.pubVisionMove.publish(data)
 
     def publishVisionBrick(self, data):
-        print "publishVisionBrick"
         self.waitForResponse = True
         self.pubVisionBrick.publish(data)
 
     def publishArmController(self, data):
-        print "publishArmController"
         self.waitForResponse = True
         self.pubArmController.publish(data)
+
+    def pubArduino(self,data):
+        self.pubArduino.publish(data)
 
     def checkForWin(self, board):
         WIN_OPTIONS = ((0, 1, 2), (3, 4, 5), (6, 7, 8),
                        (0, 3, 6), (1, 4, 7), (2, 5, 8),
                        (2, 5, 8), (0, 4, 8), (2, 4, 6))
         for row in WIN_OPTIONS:
-            if board[row[0]] == board[row[1]] == board[row[2]] != "0":
+            if board[row[0]] == board[row[1]] == board[row[2]] != EMPTY_SLOT:
                 return board[row[0]]
-        if "0" not in board:
-            return "T"
-        return "C"
+        if EMPTY_SLOT not in board:
+            return TIE
+        return CONTINUE_GAME
 
 
     def possibleMoves(self,board):
         moves = []
-        for square in range(8):
-            if board[square] == "0":
+        for square in range(9):
+            if board[square] == EMPTY_SLOT:
                 moves.append(square)
         return moves
 
@@ -199,7 +192,7 @@ class gameLogic:
             if self.checkForWin(board) == brickRobot:
                 print "found a possible win"
                 return move
-            board[move] = "0"
+            board[move] = EMPTY_SLOT
 
         #can player win next turn
         for move in self.possibleMoves(board):
@@ -207,8 +200,7 @@ class gameLogic:
             if self.checkForWin(board) == brickPlayer:
                 print "found a way player can win, blocking this move"
                 return move
-            board[move] = "0"
-
+            board[move] = EMPTY_SLOT
         #make the best move
         for move in BEST_MOVES:
             if move in self.possibleMoves(board):

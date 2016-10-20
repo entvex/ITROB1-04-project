@@ -11,9 +11,7 @@ class gripper_node:
         self.pubGripper = rospy.Publisher(RESPOND_GRIPPER_KEY,String)
         self.joint_cmd_pub = rospy.Publisher("/gripper/command", Float64)
 
-
     def callbackGrip(self, data):
-        print 'callbackGrip'
         if data.data == "GRIP":
             self.grip(0.6)
         elif data.data == "RELEASE":
@@ -25,15 +23,13 @@ class gripper_node:
 
 
     def grip(self, value):
-        rospy.loginfo(rospy.get_caller_id() + "I heard %s", value)
         time.sleep(1)
         self.joint_cmd_pub.publish(float(value))
-        # TODO Maybe pause here?
         time.sleep(1)
 
 if __name__ == "__main__":
     execfile('/home/ubuntu/ITROB1-04-project/catkin_ws/src/crossnballs/nodes/crossNballsLib.py')
-    rospy.init_node("gripper_node_test")
+    rospy.init_node("gripper_node")
     node = gripper_node()
     time.sleep(1)
     node.grip(0.0)
