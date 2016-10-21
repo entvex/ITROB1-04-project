@@ -5,6 +5,9 @@ ros::NodeHandle nh;
 
 std_msgs::String pushedMsg;
 
+//initialize vores LEDs som output pin
+//og lav en input pin for kanppen
+
 const int greenLed = 2;                 // Green LED digital pin
 const int redLed     = 3;                 // Red LED digital pin
 const int button      = 4;                 // Button digital pin
@@ -41,6 +44,7 @@ void setup()
   pinMode(redLed, OUTPUT); 
   pinMode(button, INPUT);
 
+  //Lav en pullup modstand på knappen
   digitalWrite(button, HIGH);
 
   lastReading = !digitalRead(button);
