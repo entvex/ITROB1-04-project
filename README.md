@@ -14,11 +14,7 @@ in another terminal after the base has been successfully brought up
 
 	roslaunch au_crustcrawler_base meta.launch
 
-after the meta has launched and exited again start the nodes by running
-
-	rosrun au_crustcrawler_base au_dynamixel_test_node.py
-	
-If you have an arduino with two LEDS and a button run
+The meta has launched and exited again start rosserial if you have an arduino with two LEDS and a button run
 
 	rosrun rosserial_python serial_node.py /dev/ttyUSB1
   
